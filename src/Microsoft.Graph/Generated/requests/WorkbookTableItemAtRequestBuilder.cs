@@ -45,5 +45,114 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableAddRequestBuilder.
+        /// </summary>
+        /// <param name="hasHeaders">A hasHeaders parameter for the OData method call.</param>
+        /// <param name="address">A address parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableAddRequestBuilder"/>.</returns>
+        public IWorkbookTableAddRequestBuilder Add(
+            bool hasHeaders,
+            string address)
+        {
+            return new WorkbookTableAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                hasHeaders,
+                address);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableClearFiltersRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableClearFiltersRequestBuilder"/>.</returns>
+        public IWorkbookTableClearFiltersRequestBuilder ClearFilters()
+        {
+            return new WorkbookTableClearFiltersRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.clearFilters"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableConvertToRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableConvertToRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableConvertToRangeRequestBuilder ConvertToRange()
+        {
+            return new WorkbookTableConvertToRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.convertToRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableCountRequestBuilder"/>.</returns>
+        public IWorkbookTableCountRequestBuilder Count()
+        {
+            return new WorkbookTableCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableDataBodyRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableDataBodyRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableDataBodyRangeRequestBuilder DataBodyRange()
+        {
+            return new WorkbookTableDataBodyRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.dataBodyRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableHeaderRowRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableHeaderRowRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableHeaderRowRangeRequestBuilder HeaderRowRange()
+        {
+            return new WorkbookTableHeaderRowRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.headerRowRange"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookTableItemAtRequestBuilder"/>.</returns>
+        public IWorkbookTableItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookTableItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableRangeRequestBuilder Range()
+        {
+            return new WorkbookTableRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableReapplyFiltersRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableReapplyFiltersRequestBuilder"/>.</returns>
+        public IWorkbookTableReapplyFiltersRequestBuilder ReapplyFilters()
+        {
+            return new WorkbookTableReapplyFiltersRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reapplyFilters"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookTableTotalRowRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableTotalRowRangeRequestBuilder"/>.</returns>
+        public IWorkbookTableTotalRowRangeRequestBuilder TotalRowRange()
+        {
+            return new WorkbookTableTotalRowRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.totalRowRange"),
+                this.Client);
+        }
     }
 }

@@ -307,5 +307,24 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             Assert.Equal("$orderby", reminderViewRequest.QueryOptions[0].Name);
             Assert.Equal("value", reminderViewRequest.QueryOptions[0].Value);
         }
+
+        [Fact]
+        public void ComposableFunctionUsingFunction()
+        {
+            var expectedRequestUrl = string.Format("{0}/users/michael/drive/items/01DVF26FGQUWUQODOYUZGZ7CJ5YDPDI6J4/workbook/worksheets/sheet1/microsoft.graph.range/microsoft.graph.row(row=0) ", this.graphBaseUrl);
+
+
+            var workbookRangeRowRequest = this.graphServiceClient.Users["michael"]
+                                                                 .Drive
+                                                                 .Items["01DVF26FGQUWUQODOYUZGZ7CJ5YDPDI6J4"]
+                                                                 .Workbook
+                                                                 .Worksheets["sheet1"]
+                                                                 .Range()
+                                                                 .Row(0)
+                                                                 .Request() as WorkbookRangeRowRequest;
+
+            Assert.NotNull(workbookRangeRowRequest);
+            Assert.Equal(new Uri(expectedRequestUrl), new Uri(workbookRangeRowRequest.RequestUrl));
+        }
     }
 }

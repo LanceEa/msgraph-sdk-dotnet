@@ -45,5 +45,54 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for SiteAddRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        public ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value)
+        {
+            return new SiteAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                value);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByIntervalRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        public ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval()
+        {
+            return new SiteGetActivitiesByIntervalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteGetByPathRequestBuilder.
+        /// </summary>
+        /// <param name="path">A path parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetByPathRequestBuilder"/>.</returns>
+        public ISiteGetByPathRequestBuilder GetByPath(
+            string path)
+        {
+            return new SiteGetByPathRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getByPath"),
+                this.Client,
+                path);
+        }
+        /// <summary>
+        /// Gets the request builder for SiteRemoveRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
+        public ISiteRemoveRequestBuilder Remove(
+            IEnumerable<Site> value)
+        {
+            return new SiteRemoveRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.remove"),
+                this.Client,
+                value);
+        }
     }
 }

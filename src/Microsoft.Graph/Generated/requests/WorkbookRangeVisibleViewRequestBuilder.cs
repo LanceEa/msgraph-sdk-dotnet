@@ -42,5 +42,28 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeViewItemAtRequestBuilder"/>.</returns>
+        public IWorkbookRangeViewItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookRangeViewItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeViewRangeRequestBuilder"/>.</returns>
+        public IWorkbookRangeViewRangeRequestBuilder Range()
+        {
+            return new WorkbookRangeViewRangeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.range"),
+                this.Client);
+        }
     }
 }

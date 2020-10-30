@@ -45,5 +45,28 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartSeriesCountRequestBuilder"/>.</returns>
+        public IWorkbookChartSeriesCountRequestBuilder Count()
+        {
+            return new WorkbookChartSeriesCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSeriesItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSeriesItemAtRequestBuilder"/>.</returns>
+        public IWorkbookChartSeriesItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookChartSeriesItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
     }
 }

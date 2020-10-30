@@ -45,5 +45,28 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartPointCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartPointCountRequestBuilder"/>.</returns>
+        public IWorkbookChartPointCountRequestBuilder Count()
+        {
+            return new WorkbookChartPointCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartPointItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartPointItemAtRequestBuilder"/>.</returns>
+        public IWorkbookChartPointItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookChartPointItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
     }
 }

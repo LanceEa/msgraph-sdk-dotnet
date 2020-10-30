@@ -24,5 +24,17 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IWorkbookRangeViewItemAtRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookRangeViewItemAtRequestBuilder"/>.</returns>
+        IWorkbookRangeViewItemAtRequestBuilder ItemAt(
+            Int32 index);
+        /// <summary>
+        /// Gets the request builder for WorkbookRangeViewRangeRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRangeViewRangeRequestBuilder"/>.</returns>
+        IWorkbookRangeViewRangeRequestBuilder Range();
     }
 }

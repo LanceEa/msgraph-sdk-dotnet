@@ -45,5 +45,102 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartAddRequestBuilder.
+        /// </summary>
+        /// <param name="type">A type parameter for the OData method call.</param>
+        /// <param name="seriesBy">A seriesBy parameter for the OData method call.</param>
+        /// <param name="sourceData">A sourceData parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartAddRequestBuilder"/>.</returns>
+        public IWorkbookChartAddRequestBuilder Add(
+            string type,
+            string seriesBy,
+            Newtonsoft.Json.Linq.JToken sourceData)
+        {
+            return new WorkbookChartAddRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.add"),
+                this.Client,
+                type,
+                seriesBy,
+                sourceData);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartCountRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartCountRequestBuilder"/>.</returns>
+        public IWorkbookChartCountRequestBuilder Count()
+        {
+            return new WorkbookChartCountRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.count"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartImageRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookChartImageRequestBuilder"/>.</returns>
+        public IWorkbookChartImageRequestBuilder Image()
+        {
+            return new WorkbookChartImageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.image"),
+                this.Client);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartItemRequestBuilder.
+        /// </summary>
+        /// <param name="name">A name parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartItemRequestBuilder"/>.</returns>
+        public IWorkbookChartItemRequestBuilder Item(
+            string name)
+        {
+            return new WorkbookChartItemRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.item"),
+                this.Client,
+                name);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartItemAtRequestBuilder.
+        /// </summary>
+        /// <param name="index">A index parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartItemAtRequestBuilder"/>.</returns>
+        public IWorkbookChartItemAtRequestBuilder ItemAt(
+            Int32 index)
+        {
+            return new WorkbookChartItemAtRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.itemAt"),
+                this.Client,
+                index);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSetDataRequestBuilder.
+        /// </summary>
+        /// <param name="seriesBy">A seriesBy parameter for the OData method call.</param>
+        /// <param name="sourceData">A sourceData parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSetDataRequestBuilder"/>.</returns>
+        public IWorkbookChartSetDataRequestBuilder SetData(
+            string seriesBy,
+            Newtonsoft.Json.Linq.JToken sourceData)
+        {
+            return new WorkbookChartSetDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setData"),
+                this.Client,
+                seriesBy,
+                sourceData);
+        }
+        /// <summary>
+        /// Gets the request builder for WorkbookChartSetPositionRequestBuilder.
+        /// </summary>
+        /// <param name="startCell">A startCell parameter for the OData method call.</param>
+        /// <param name="endCell">A endCell parameter for the OData method call.</param>
+        /// <returns>The <see cref="IWorkbookChartSetPositionRequestBuilder"/>.</returns>
+        public IWorkbookChartSetPositionRequestBuilder SetPosition(
+            Newtonsoft.Json.Linq.JToken startCell,
+            Newtonsoft.Json.Linq.JToken endCell)
+        {
+            return new WorkbookChartSetPositionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setPosition"),
+                this.Client,
+                startCell,
+                endCell);
+        }
     }
 }

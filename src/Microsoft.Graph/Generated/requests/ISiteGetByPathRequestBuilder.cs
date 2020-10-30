@@ -24,5 +24,31 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         ISiteGetByPathRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for SiteAddRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteAddRequestBuilder"/>.</returns>
+        ISiteAddRequestBuilder Add(
+            IEnumerable<Site> value);
+        /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByIntervalRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
+        /// <summary>
+        /// Gets the request builder for SiteGetByPathRequestBuilder.
+        /// </summary>
+        /// <param name="path">A path parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetByPathRequestBuilder"/>.</returns>
+        ISiteGetByPathRequestBuilder GetByPath(
+            string path);
+        /// <summary>
+        /// Gets the request builder for SiteRemoveRequestBuilder.
+        /// </summary>
+        /// <param name="value">A value parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteRemoveRequestBuilder"/>.</returns>
+        ISiteRemoveRequestBuilder Remove(
+            IEnumerable<Site> value);
     }
 }

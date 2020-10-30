@@ -572,6 +572,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
+        [Fact(Skip = "No CI set up for functional tests")]
+        public async Task ExcelUseComposableFunctionWithFunctions()
+        {
+            var excelFileId = "01DVF26FGQUWUQODOYUZGZ7CJ5YDPDI6J4";
+            var excelWorksheetId = "sheet1";
+
+            var result = await graphClient.Users[""].Drive.Items[excelFileId]
+                                                          .Workbook
+                                                          .Worksheets[excelWorksheetId]
+                                                          .Range()
+                                                          .Row(0)
+                                                          .Request()
+                                                          .GetAsync();
+        }
+
         //public async Task ExcelTestTemplate()
         //{
         //    // Before you add a test, setup your test resource in /Resources/excelTestResource.xlsx. Add test data to a new sheet.
